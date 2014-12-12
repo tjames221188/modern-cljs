@@ -10,7 +10,9 @@
                  [org.clojure/clojurescript "0.0-2411"]]
 
   ;; lein cljs build plugin to build a cljs project
-  :plugins [[lein-cljsbuild "1.0.3"]]
+  :plugins [[lein-cljsbuild "1.0.3"]
+            [lein-ring "0.8.13"]
+            [compojure "1.3.1"]]
 
   ;;cljsbuild options
   :cljsbuild {:builds
@@ -25,4 +27,5 @@
                            :optimizations :whitespace
 
                            ;;generated js code prettification
-                           :pretty-print true}}]})
+                           :pretty-print true}}]}
+  :ring {:handler modern-cljs.core/handler})
